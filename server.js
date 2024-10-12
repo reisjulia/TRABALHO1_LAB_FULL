@@ -1,30 +1,21 @@
 
-const express = require('express'); 
-const mongoose = require('mongoose'); 
+const express = require('express');  
 const dotenv = require('dotenv'); 
 const userRoutes = require('./src/routes/UserRoutes'); 
-const roomRoutes = require('./src/routes/RoomRoutes');
-const connectDB = require('./src/config/db')
-
 
 dotenv.config();
-connectDB();
 
 const app = express();
 app.use(express.json());
 
-
-    const PORT = process.env.PORT || 3333;
-    app.listen(PORT, () => {
-        console.log(`Servidor rodando na porta ${PORT}`);
-    });
-
-
-
-app.use('/api/users', userRoutes);
-app.use('/api/rooms', roomRoutes);
+const PORT = process.env.PORT || 3333;
 
 app.get('/', (req, res) => {
-    res.send('Servidor em funcionando');
-  });
+    res.send('Servidor funcionando');
+});
 
+app.use('/api/users', userRoutes);
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});

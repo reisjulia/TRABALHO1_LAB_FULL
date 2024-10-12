@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 
 class UserController {
-    async index(rç, response){
+    async index(request, response){
         try {
             const users =  userService.getAllUsers();
             response.status(200).json(users);

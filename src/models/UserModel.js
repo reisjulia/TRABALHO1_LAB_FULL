@@ -1,6 +1,5 @@
 const User = require('../models/UserModel');
-const DataTypes  = require('sequelize'); 
-const sequelize = require('../config/database'); 
+const DataTypes  = require('sequelize'); const sequelize = require('../config/database'); 
 const bcrypt = require('bcrypt');
 
 const UserSchema = sequelize.define('User',{
