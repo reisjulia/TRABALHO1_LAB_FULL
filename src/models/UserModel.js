@@ -1,10 +1,11 @@
 const User = require('../models/UserModel');
-const mongoose = require('mongoose');
+const DataTypes  = require('sequelize'); 
+const sequelize = require('../config/database'); 
 const bcrypt = require('bcrypt');
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = sequelize.define('User',{
     id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER,        
         primaryKey: true,
         autoIncrement: true,
     },
